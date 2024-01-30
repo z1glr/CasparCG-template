@@ -1,0 +1,63 @@
+<html>
+	<style>
+		body {
+			margin: 0px;
+		}
+		
+		#main {
+			opacity: 0;
+
+			color: white;
+		}
+
+		#main.show {
+			opacity: 1;
+
+			transition: opacity 0.5s;
+		}
+
+		#main.hide {
+			opacity: 0;
+
+			transition: opacity 0.5s;
+		}
+	</style>
+	<!-- ------------------------------------------------------------------- -->
+	<head>
+		<title>
+			CasparCG template by z1glr - v1.0
+		</title>
+	</head>
+	<!-- ------------------------------------------------------------------- -->
+	<body>
+		<div id="main">
+			<div id="message">Hello World!</div>
+			<span>next_counter</span> <span id="next_counter_i">0</span>
+		</div>
+	</body>
+	<!-- ------------------------------------------------------------------- -->
+	<script>
+		function update(str_args) {
+			json_args = JSON.parse(str_args);
+
+			if (json_args.text !== undefined) {
+				document.getElementById("message").innerHTML = json_args.text;
+			}
+		}
+
+		function play() {
+			document.getElementById("main").classList.add("show");
+		}
+
+		function stop() {
+			div_main = document.getElementById("main");
+			
+			div_main.classList.add("hide");
+			div_main.classList.remove("show");
+		}
+
+		function next() {
+			document.getElementById("next_counter_i").innerHTML++;
+		}
+	</script>
+</html>
