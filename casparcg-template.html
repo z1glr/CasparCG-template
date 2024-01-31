@@ -16,10 +16,10 @@
 			transition: opacity 0.5s;
 		}
 
-		#main.hide {
+		#main.stop {
 			opacity: 0;
 
-			transition: opacity 0.5s;
+			transition: all 0s;
 		}
 	</style>
 	<!-- ------------------------------------------------------------------- -->
@@ -52,8 +52,7 @@
 		function stop() {
 			div_main = document.getElementById("main");
 			
-			div_main.classList.add("hide");
-			div_main.classList.remove("show");
+			div_main.classList.add("stop");
 		}
 
 		function next() {
